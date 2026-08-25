@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace U1T2_CRUD_MVC.Models;
 
@@ -7,6 +8,8 @@ public partial class Product
 {
     public int ProductId { get; set; }
 
+    [Required(ErrorMessage = "El nombre del producto es obligatorio.")]
+    [StringLength(40, MinimumLength = 2, ErrorMessage = "El nombre de producto debe estar entre 2 y 40 caracteres.")]
     public string ProductName { get; set; } = null!;
 
     public int? SupplierId { get; set; }
