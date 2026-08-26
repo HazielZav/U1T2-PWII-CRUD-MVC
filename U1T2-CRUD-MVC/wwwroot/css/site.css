@@ -19,17 +19,49 @@ html {
 
 body {
   margin-bottom: 60px;
+  gap: 15px;
 }
 
 .form-centrado {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: auto;
+    max-width: 800px;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+}
+
+.form-centrado .form-group {
+    width: 48%; 
+    margin-bottom: 15px;
+}
+
+.form-centrado input, .form-centrado select {
+    width: 100%;
 }
 
 .form-centrado input, .form-centrado select{
     width: 330px;
+    margin-bottom: 15px;
+}
+
+.form-centrado dl {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-centrado dt {
+    width: 20%;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form-centrado dd {
+    width: 30%;
     margin-bottom: 15px;
 }
 
