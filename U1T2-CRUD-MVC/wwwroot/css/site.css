@@ -42,8 +42,9 @@ body {
     height: 100%;
 }
 
-.controles-crud a, .crear-producto a{
+.controles-crud a, .crear-producto a, .botones-pagina a{
     text-decoration: none;
+    gap: 6px;
     padding: 6px 12px;
     color: white;
     border-radius: 4px;
