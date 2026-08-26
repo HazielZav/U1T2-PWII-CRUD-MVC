@@ -5,11 +5,13 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<div class="crear-producto">
+    <p>
+        <a asp-action="Create">Agregar Producto</a>
+    </p>
+</div>
+<div class="form-centrado">
+    <table class="table">
     <thead>
         <tr>
             <th>
@@ -72,12 +74,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            <td class="controles-crud">
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.ProductId">Detalles</a>
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Eliminar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

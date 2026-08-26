@@ -34,14 +34,17 @@ public partial class Product
     [Display(Name = "Nivel de reorden")]
     public short? ReorderLevel { get; set; }
 
-    
+    [Display(Name = "Estado")]
     public ulong Discontinued { get; set; }
     [Display(Name = "Estado")]
     public string Estado => Discontinued == 1 ? "Descontinuado" : "Activo";
 
+    [Display(Name = "Categoría")]
     public virtual Category? Category { get; set; }
 
+    [Display(Name = "Detalle de orden")]
     public virtual ICollection<Orderdetail> Orderdetails { get; set; } = new List<Orderdetail>();
 
+    [Display(Name = "Proveedores")]
     public virtual Supplier? Supplier { get; set; }
 }

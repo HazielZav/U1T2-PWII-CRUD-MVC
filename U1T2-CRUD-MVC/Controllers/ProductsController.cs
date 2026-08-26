@@ -155,7 +155,8 @@ namespace U1T2_CRUD_MVC.Controllers
             var product = await _context.Products.FindAsync(id);
             if (product != null)
             {
-                _context.Products.Remove(product);
+                product.Discontinued = 1;
+                _context.Products.Update(product);
             }
 
             await _context.SaveChangesAsync();
