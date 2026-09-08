@@ -1,0 +1,27 @@
+﻿<!-- // Se podría dejar como un objeto de tipo dinamico, pero pierde la consistentia y el control de los datos -->
+<!-- (arroba)model IEnumerable(Menor que)dynamic(Mayor que) -->
+@model IEnumerable<U1T2_CRUD_MVC.Models.ConsumoCliente>
+@{
+	ViewData["Title"] = "Consumo por cliente";
+}
+
+<h1>Consumo por cliente</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().Cliente)</th>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().Producto)</th>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().Cantidad)</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Cliente</td>
+				<td>@item.Producto</td>
+				<td>@item.Cantidad</td>
+			</tr>
+		}
+	</tbody>
+</table>

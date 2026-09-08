@@ -167,5 +167,21 @@ namespace U1T2_CRUD_MVC.Controllers
         {
             return _context.Products.Any(e => e.ProductId == id);
         }
+
+        public async Task<IActionResult> ConsumoClienteVista()
+        {
+            var contextoBD = _context.Orderdetails.Include(od => od.Order)
+                .ThenInclude(o => o.Customer)
+                .Include(od => od.Product)
+                .Select((od) => new ConsumoCliente()
+                {
+                    Cliente = od.Order.Customer.CompanyName,
+                    Producto = od.Product.ProductName,
+                    Cantidad = od.Quantity
+                }
+                ).OrderBy(c => c.Cliente).ThenByDescending(c => c.Cantidad)
+                .ThenBy(C => C.Producto);
+            return View(await contextoBD.ToListAsync());
+        }
     }
 }

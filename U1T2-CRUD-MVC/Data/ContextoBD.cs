@@ -255,7 +255,7 @@ public partial class ContextoBD : DbContext
                 .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
 
             entity
-                .ToTable("orderdetails")
+                .ToTable("order details")
                 .HasCharSet("latin1")
                 .UseCollation("latin1_swedish_ci");
 
