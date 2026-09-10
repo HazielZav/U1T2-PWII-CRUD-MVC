@@ -1,0 +1,27 @@
+﻿@model IEnumerable<U1T2_CRUD_MVC.Models.VentaTotalEmpleadosEntre1995Y1996>
+@{
+	ViewData["Title"] = "Registro de venta de productos y monto total de empleados entre 1995 y 1996";
+}
+
+<h1>Registro de venta de productos y monto total de empleados entre 1995 y 1996</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().NombreEmpleado)</th>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().NombreProducto)</th>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().CantidadVendida)</th>
+			<th>@Html.DisplayNameFor(model => model.FirstOrDefault().TotalVentas)</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.NombreEmpleado</td>
+				<td>@item.NombreProducto</td>
+				<td>@item.CantidadVendida</td>
+				<td>@item.TotalVentas</td>
+			</tr>
+		}
+	</tbody>
+</table>
